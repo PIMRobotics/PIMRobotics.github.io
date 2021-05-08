@@ -1,2 +1,2 @@
-# byterobotics.github.io
-ByteDance Robotics Research
+# pimrobotics.github.io
+PIMRobotics = Perception, Interaction and Manipulation
