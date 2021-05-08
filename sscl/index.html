@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- === Header Starts === -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Simultaneous Semantic and Collision Learning for 6-DoF Grasp Pose Estimation</title>
+
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/font.css" rel="stylesheet" type="text/css">
+  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+</head>
+<!-- === Header Ends === -->
+
+
+<body>
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+  <div class="header">
+    <div class="title", style="padding-top: 25pt;">  <!-- Set padding as 10 if title is with two lines. -->
+      Simultaneous Semantic and Collision Learning for 6-DoF Grasp Pose Estimation
+    </div>
+  </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+      <a href="./">Yiming Li</a><sup>1</sup>,&nbsp;
+    <a href="http://www.taokong.org">Tao Kong</a><sup>2</sup>,&nbsp;
+    <a href="./">Ruihang Chu</a><sup>3</sup>,&nbsp;
+      <a href="./">Yifeng Li</a><sup>2</sup>,&nbsp;
+      <a href="./">Peng Wang</a><sup>1</sup>,
+      <a href="https://lileicc.github.io">Lei Li</a><sup>2</sup>,
+  </div>
+  <div class="institution">
+      <sup>1</sup>Chinese Academy of Sciences,&nbsp;&nbsp;&nbsp;
+      <sup>2</sup>ByteDance AI Lab,
+      <sup>3</sup>The Chinese University of Hong Kong
+  </div>
+  <div class="link">
+    <a href="./">[Paper]</a>&nbsp;
+    <a href="./">[Post]</a>
+  </div>
+
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/lts.png" width="70%"></td>
+      </tr>
+    </table>
+
+</div>
+<!-- === Home Section Ends === -->
+
+
+<!-- === Overview Section Starts === -->
+<div class="section">
+  <div class="title">Overview</div>
+  <div class="body">
+    Grasping in cluttered scenes has always been a great challenge for robots,
+    due to the requirement of the ability to well understand the scene and object information.
+    In this work, we propose to formalize the 6-DoF grasp pose estimation as a simultaneous multi-task learning problem.
+    In a unified framework, we jointly predict the feasible 6-DoF grasp poses, instance semantic segmentation, and collision information.
+    The whole framework is jointly optimized and end-to-end differentiable.
+    Our model is evaluated on large scale benchmarks as well as real robot system.
+
+  </div>
+</div>
+<!-- === Overview Section Ends === -->
+
+
+<!-- === Result Section Starts === -->
+<div class="section">
+  <div class="title">Results</div>
+  <div class="body">
+    6 DoF Grasp pose estimation results on GraspNet-1billion dataset.
+    <!-- Adjust the number of rows and columns (EVERY project differs). -->
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/sota.png" width="80%"></td>
+      </tr>
+    </table>
+
+    Demo video here.
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+    <tr>
+      <td><iframe width="850" height="478" src="https://www.youtube.com/embed/bmtu2vnIq54"
+                  title="YouTube video player"
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe></tr></td>
+    </tr>
+    </table>
+  </div>
+</div>
+<!-- === Result Section Ends === -->
+
+
+<!-- === Reference Section Starts === -->
+<div class="section">
+  <div class="bibtex">BibTeX</div>
+<pre>
+@inproceedings{li2021sscl,
+  title={Simultaneous Semantic and Collision Learning for 6-DoF Grasp Pose Estimation},
+  Yiming Li1, Tao Kong2, Ruihang Chu3, Yifeng Li2, Peng Wang1 and Lei Li2
+  author={Li, Yiming and Kong, Tao and Chu, Ruihang and Li, Yifeng, Wang, Peng and Li, Lei},
+  booktitle = {None},
+  year={2021}
+}
+
+</pre>
+</div>
+
+</body>
+
+</html>
