@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- === Header Starts === -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>FoveaBox: Beyond Anchor-based Object Detector</title>
+
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/font.css" rel="stylesheet" type="text/css">
+  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+</head>
+<!-- === Header Ends === -->
+
+
+<body>
+
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+  <div class="header">
+    <div class="title", style="padding-top: 25pt;">  <!-- Set padding as 10 if title is with two lines. -->
+      FoveaBox: Beyond Anchor-based Object Detector
+    </div>
+  </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+      <a href="http://www.taokong.org">Tao Kong</a><sup>1</sup>,&nbsp;
+    <a href="https://scholar.google.com/citations?user=DbviELoAAAAJ&hl=en">Fuchun Sun</a><sup>2</sup>,&nbsp;
+    <a href="https://scholar.google.com/citations?user=HXnkIkwAAAAJ&hl=en">Huaping Liu</a><sup>2</sup>,&nbsp;
+      <a href="https://scholar.google.com/citations?user=Z7v-NA4AAAAJ&hl=zh-CN">Yuning Jiang</a><sup>1</sup>,&nbsp;
+      <a href="https://lileicc.github.io">Lei Li</a><sup>1</sup>,&nbsp;
+      <a href="https://www.cis.upenn.edu/~jshi">Jianbo Shi</a><sup>3</sup>
+  </div>
+  <div class="institution">
+      <sup>1</sup>ByteDance AI Lab,&nbsp;&nbsp;&nbsp;
+      <sup>2</sup>Tsinghua University,&nbsp;&nbsp;&nbsp;
+      <sup>3</sup>University of Pennsylvania
+  </div>
+  <div class="link">
+    <a href="https://arxiv.org/abs/1904.03797">[Paper]</a>&nbsp;
+    <a href="https://github.com/taokong/FoveaBox">[Code]</a>
+  </div>
+  <div class="teaser">
+    <img src="files/foveabox.jpg" width="90%">
+  </div>
+</div>
+<!-- === Home Section Ends === -->
+
+
+<!-- === Overview Section Starts === -->
+<div class="section">
+  <div class="title">Overview</div>
+  <div class="body">
+    FoveaBox is an accurate, flexible and completely anchor-free object detection system for object detection framework.
+      Different from previous anchor-based methods,
+      FoveaBox directly learns the object existing possibility and the bounding box coordinates without anchor reference.
+      This is achieved by: (a) predicting category-sensitive semantic maps for the object existing possibility,
+      and (b) producing category-agnostic bounding box for each position that potentially contains an object.
+      FoveaBox avoids all computation and hyper-parameters related to anchor boxes,
+      which are often sensitive to the final detection performance.
+  </div>
+</div>
+<!-- === Overview Section Ends === -->
+
+
+<!-- === Result Section Starts === -->
+<div class="section">
+  <div class="title">Results</div>
+  <div class="body">
+      Object detection single-model results v.s. state-of-the-arts on COCO test-dev.
+      We show results for FoveaBox models with 800 input scale.
+      FoveaBox-align indicates utilizing feature alignment
+    <!-- Adjust the number of rows and columns (EVERY project differs). -->
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/sota.png" width="80%"></td>
+      </tr>
+    </table>
+
+      Qualitative comparison of RetinaNet (left) and FoveaBox (right).
+      Our model shows improvements in classes with large aspect ratios. Better viewed in color.
+    <!-- Adjust the number of rows and columns (EVERY project differs). -->
+    <table width="100%" style="margin: 20pt 0; text-align: center;">
+      <tr>
+        <td><img src="files/result.png" width="80%"></td>
+      </tr>
+    </table>
+
+
+<!--      -->
+<!--    Demo video here.-->
+<!--    &lt;!&ndash; Adjust the frame size based on the demo (EVERY project differs). &ndash;&gt;-->
+<!--    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">-->
+<!--      <iframe src="https://via.placeholder.com/900x450" frameborder=0-->
+<!--              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"-->
+<!--              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--              allowfullscreen></iframe>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+</div>
+
+<!-- === Result Section Ends === -->
+
+
+<!-- === Reference Section Starts === -->
+<div class="section">
+  <div class="bibtex">BibTeX</div>
+<pre>
+@article{kong2019foveabox,
+  title={FoveaBox: Beyond Anchor-based Object Detector},
+  author={Kong, Tao and Sun, Fuchun and Liu, Huaping and Jiang, Yuning and Li, Lei and Shi, Jianbo},
+  journal={IEEE Transactions on Image Processing},
+  pages={7389--7398},
+  year={2020}
+}
+</pre>
+
+</div>
+
+</body>
+
+</html>
