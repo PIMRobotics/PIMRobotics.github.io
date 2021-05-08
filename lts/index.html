@@ -6,7 +6,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>SOLO: Segmenting Objects by Locations</title>
+  <title>Locate then Segment: A Strong Pipeline for Referring Image Segmentation</title>
 
   <link href="./assets/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/font.css" rel="stylesheet" type="text/css">
@@ -22,29 +22,30 @@
   <!-- === Title Starts === -->
   <div class="header">
     <div class="title", style="padding-top: 25pt;">  <!-- Set padding as 10 if title is with two lines. -->
-      SOLO: Segmenting Objects by Locations
+      Locate then Segment: A Strong Pipeline for Referring Image Segmentation
     </div>
   </div>
   <!-- === Title Ends === -->
   <div class="author">
-      <a href="https://www.xloong.wang">Xinlong Wang</a><sup>1</sup>,&nbsp;
+      <a href="https://jingyaa.github.io/jingya.github.io">Ya Jing</a><sup>1</sup>,&nbsp;
     <a href="http://www.taokong.org">Tao Kong</a><sup>2</sup>,&nbsp;
-    <a href="https://cshen.github.io/">Chunhua Shen</a><sup>1</sup>,&nbsp;
-      <a href="https://scholar.google.com/citations?user=Z7v-NA4AAAAJ&hl=zh-CN">Yuning Jiang</a><sup>2</sup>,&nbsp;
-      <a href="https://lileicc.github.io">Lei Li</a><sup>2</sup>
+    <a href="http://www.nlpr.ia.ac.cn/users/wangwei1/index.htm">Wei Wang</a><sup>1</sup>,&nbsp;
+      <a href="http://www.cbsr.ia.ac.cn/users/liangwang/">Liang Wang</a><sup>2</sup>,&nbsp;
+      <a href="https://lileicc.github.io">Lei Li</a><sup>2</sup>,
+      <a href="http://www.cbsr.ia.ac.cn/users/tnt/tnt.htm">Tieniu Tan</a><sup>2</sup>,
   </div>
   <div class="institution">
       <sup>1</sup>The University of Adelaide,&nbsp;&nbsp;&nbsp;
       <sup>2</sup>ByteDance AI Lab
   </div>
   <div class="link">
-    <a href="https://arxiv.org/abs/1912.04488">[Paper]</a>&nbsp;
-    <a href="https://github.com/WXinlong/SOLO">[Code]</a>
+    <a href="https://arxiv.org/abs/2103.16284">[Paper]</a>&nbsp;
+    <a href="https://mp.weixin.qq.com/s/jqDqybXe5isQZvx9dcAAnw">[Post]</a>
   </div>
 
     <table width="100%" style="margin: 20pt 0; text-align: center;">
       <tr>
-        <td><img src="files/maskrcnnvssolo.png" width="60%"></td>
+        <td><img src="files/lts.png" width="70%"></td>
       </tr>
     </table>
 
@@ -56,10 +57,17 @@
 <div class="section">
   <div class="title">Overview</div>
   <div class="body">
-    SOLO is totally box-free instance segmentation framework thus not being restricted by (anchor) box locations and scales,
-    and naturally benefits from the inherent advantages of FCNs.
-    Our method takes an image as input, directly outputs instance masks and corresponding class probabilities,
-    in a fully convolutional, box-free and grouping-free paradigm.
+    Referring image segmentation aims to segment the objects referred by a natural language expression.
+    In this work, we view this task from the perspective of decoupling it into a "Locate-Then-Segment" (LTS) scheme.
+    Given a language expression, people generally first perform attention to the corresponding target image regions,
+    then generate a fine segmentation mask about the object based on its context.
+    The LTS first extracts and fuses both visual and textual features to get a cross-modal representation,
+    then applies a cross-model interaction on the visual-textual features to locate the referred object with position prior,
+    and finally generates the segmentation result with a light-weight segmentation network.
+    Our LTS is simple but surprisingly effective. On three popular benchmark datasets,
+    the LTS outperforms all the previous state-of-the-art methods by a large margin (e.g., +3.2% on RefCOCO+ and +3.4% on RefCOCOg).
+    In addition, our model is more interpretable with explicitly locating the object, which is also proved by visualization experiments.
+
   </div>
 </div>
 <!-- === Overview Section Ends === -->
@@ -69,20 +77,12 @@
 <div class="section">
   <div class="title">Visualization</div>
   <div class="body">
-      Visualization of instance segmentation results using the Res-101-FPN backbone.
-    The model is trained on the COCO train2017 dataset, achieving a mask AP of 37.8 on the COCO test-dev.
+      Visualization of correlation heatmaps and final results predicted by our model.
+    gt means the ground truth segmentation mask of input image.
     <!-- Adjust the number of rows and columns (EVERY project differs). -->
     <table width="100%" style="margin: 20pt 0; text-align: center;">
       <tr>
         <td><img src="files/vis.png" width="80%"></td>
-      </tr>
-    </table>
-
-      SOLO is also able to perform r instance contour detection.
-    <!-- Adjust the number of rows and columns (EVERY project differs). -->
-    <table width="100%" style="margin: 20pt 0; text-align: center;">
-      <tr>
-        <td><img src="files/vis_edge.png" width="80%"></td>
       </tr>
     </table>
 
@@ -105,17 +105,11 @@
 <div class="section">
   <div class="bibtex">BibTeX</div>
 <pre>
-@inproceedings{wang2020solo,
-  title     =  {{SOLO}: Segmenting Objects by Locations},
-  author    =  {Wang, Xinlong and Kong, Tao and Shen, Chunhua and Jiang, Yuning and Li, Lei},
-  booktitle =  {Proc. Eur. Conf. Computer Vision (ECCV)},
-  year      =  {2020}
-}
-@article{wang2020solov2,
-  title={SOLOv2: Dynamic and Fast Instance Segmentation},
-  author={Wang, Xinlong and Zhang, Rufeng and  Kong, Tao and Li, Lei and Shen, Chunhua},
-  journal={Proc. Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2020}
+@inproceedings{jing2020lts,
+  title={Locate then Segment: A Strong Pipeline for Referring Image Segmentation},
+  author={Jing, Ya and Kong, Tao and Wang, Wei and Wang, Liang and Li, Lei and Tan, Tieniu},
+  booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2021}
 }
 
 </pre>
